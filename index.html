@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Myron Web Studio - HVAC Marketing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0d0d;
+      color: #f3f4f6;
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+    header {
+      /* Asegura que el header tenga una transición suave al ocultarse */
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="text-gray-100 bg-neutral-900">
+  <!-- Header -->
+  <header class="bg-neutral-950 shadow p-6 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-extrabold text-blue-400 tracking-tight">Myron Web Studio</h1>
+      <nav class="space-x-6 text-sm font-semibold">
+        <a href="#services" class="text-gray-200 hover:text-blue-400 transition">Services</a>
+        <a href="#portfolio" class="text-gray-200 hover:text-blue-400 transition">Portfolio</a>
+        <a href="#contact" class="text-gray-200 hover:text-blue-400 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative text-center py-28 bg-cover bg-center fade-in" style="background-image: url('img/hero.png');">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="relative max-w-4xl mx-auto px-4 z-10">
+        <lottie-player background="transparent" speed="1" style="width: 300px; height: 300px; margin: 0 auto;" loop autoplay></lottie-player>
+        <h2 class="text-4xl font-extrabold text-white mt-4">Helping HVAC Businesses Get More Leads</h2>
+        <p class="mt-4 text-lg text-gray-300">Modern websites, Google optimization, SEO & paid ads for growth.</p>
+        <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow">Get a Free Demo</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-4 fade-in bg-[url('img/services.png')] bg-cover bg-center bg-no-repeat relative">
+    <div class="absolute inset-0 bg-black opacity-10"></div>
+    <div class="relative max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold mb-12 text-center text-white">Services</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/2303/2303961.png" alt="Website Design" class="w-16 mx-auto mb-4 invert" />
+            <h4 class="text-xl font-semibold text-blue-400 mb-2">Website Design</h4>
+            <p class="text-sm text-gray-400">Mobile-friendly, high-converting sites tailored to HVAC companies.</p>
+        </div>
+        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Profile" class="w-16 mx-auto mb-4 invert" />
+            <h4 class="text-xl font-semibold text-blue-400 mb-2">Google Business Optimization</h4>
+            <p class="text-sm text-gray-400">Optimize Google profile for maps visibility & positive reviews.</p>
+        </div>
+        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="Local SEO" class="w-16 mx-auto mb-4" />
+            <h4 class="text-xl font-semibold text-blue-400 mb-2">Local SEO</h4>
+            <p class="text-sm text-gray-400">Rank higher in local searches with smart content strategies.</p>
+        </div>
+        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/1042/1042338.png" alt="Lead Generation" class="w-16 mx-auto mb-4 invert" />
+            <h4 class="text-xl font-semibold text-blue-400 mb-2">Lead Generation Ads</h4>
+            <p class="text-sm text-gray-400">Drive calls and quotes with Facebook & Google advertising.</p>
+        </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20 px-4 fade-in bg-[url('img/services.png')] bg-cover bg-center bg-no-repeat relative">
+    <div class="absolute inset-0 bg-black opacity-5"></div>
+    <div class="relative max-w-6xl mx-auto z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-white">Portfolio</h3>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-neutral-900 p-4 shadow rounded-lg hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1592231858371-5693c26277ab?auto=format&fit=crop&w=800&q=80" alt="ChillPro HVAC Site" class="rounded mb-4" />
+                    <h4 class="font-semibold text-white">ChillPro HVAC</h4>
+                    <p class="text-sm text-gray-400">Website redesign + Google profile optimization.</p>
+                </div>
+                <div class="bg-neutral-900 p-4 shadow rounded-lg hover:shadow-lg transition">
+                    <img src="https://images.unsplash.com/photo-1581093458790-0f3e9c25bb4a?auto=format&fit=crop&w=800&q=80" alt="CleanAir Heating" class="rounded mb-4" />
+                    <h4 class="font-semibold text-white">CleanAir Heating</h4>
+                    <p class="text-sm text-gray-400">Landing page design + paid ads campaign.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 max-w-3xl mx-auto px-4 fade-in">
+    <h3 class="text-3xl font-bold text-center mb-6 text-white">Contact Me</h3>
+    <form id="contactForm" class="space-y-4">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        class="w-full bg-neutral-800 text-white border border-gray-600 p-3 rounded"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="w-full bg-neutral-800 text-white border border-gray-600 p-3 rounded"
+      />
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Your Message"
+        required
+        class="w-full bg-neutral-800 text-white border border-gray-600 p-3 rounded"
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+      >
+        Send Message
+      </button>
+    </form>
+    <p id="formMessage" class="text-center text-green-400 mt-4 hidden">Thank you! Your message has been sent.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-neutral-950 text-sm text-gray-500">
+    &copy; 2025 Myron Web Studio. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formMessage').classList.remove('hidden');
+      this.reset();
+    });
+
+    // Header show/hide on scroll
+    const header = document.querySelector('header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        // Scroll down - hide header
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        // Scroll up - show header
+        header.style.transform = 'translateY(0)';
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+</body>
+</html>
