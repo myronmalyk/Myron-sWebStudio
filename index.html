@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Myron Web Studio - HVAC Marketing</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -15,6 +15,8 @@
       font-family: 'Inter', sans-serif;
       background-color: #0d0d0d;
       color: #f3f4f6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     .fade-in {
       animation: fadeIn 1.2s ease-in-out forwards;
@@ -31,147 +33,356 @@
       }
     }
     header {
-      /* Asegura que el header tenga una transición suave al ocultarse */
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      backdrop-filter: saturate(180%) blur(10px);
+      background-color: rgba(15, 15, 15, 0.8);
+      /* slightly transparent for modern look */
+    }
+    /* Scroll effect for header bg */
+    header.scrolled {
+      background-color: rgba(15, 15, 15, 0.95);
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.6);
+    }
+    /* Button hover shadow */
+    .btn-primary:hover {
+      box-shadow: 0 4px 15px rgb(59 130 246 / 0.7);
+    }
+
+    /* Form input error styling */
+    .input-error {
+      border-color: #f87171 !important; /* red-400 */
+      background-color: #7f1d1d !important; /* dark red bg */
+    }
+    .error-text {
+      color: #f87171;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
     }
   </style>
 </head>
 <body class="text-gray-100 bg-neutral-900">
   <!-- Header -->
-  <header class="bg-neutral-950 shadow p-6 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-extrabold text-blue-400 tracking-tight">Myron Web Studio</h1>
-      <nav class="space-x-6 text-sm font-semibold">
-        <a href="#services" class="text-gray-200 hover:text-blue-400 transition">Services</a>
-        <a href="#portfolio" class="text-gray-200 hover:text-blue-400 transition">Portfolio</a>
-        <a href="#contact" class="text-gray-200 hover:text-blue-400 transition">Contact</a>
+  <header class="sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-3xl font-extrabold text-blue-400 tracking-tight cursor-pointer select-none">Myron Web Studio</h1>
+      <nav class="space-x-8 text-sm font-semibold flex items-center text-gray-300">
+        <a href="#services" class="hover:text-blue-400 transition">Services</a>
+        <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
+        <a href="#why" class="hover:text-blue-400 transition">Why Choose Me</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+        <a href="#contact" class="ml-6 px-4 py-2 rounded-full bg-blue-600 text-white font-semibold transition btn-primary">Work With Me</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="relative text-center py-28 bg-cover bg-center fade-in" style="background-image: url('img/hero.png');">
-    <div class="absolute inset-0 bg-black/30"></div>
-    <div class="relative max-w-4xl mx-auto px-4 z-10">
-        <lottie-player background="transparent" speed="1" style="width: 300px; height: 300px; margin: 0 auto;" loop autoplay></lottie-player>
-        <h2 class="text-4xl font-extrabold text-white mt-4">Helping HVAC Businesses Get More Leads</h2>
-        <p class="mt-4 text-lg text-gray-300">Modern websites, Google optimization, SEO & paid ads for growth.</p>
-        <a href="#contact" class="mt-6 inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow">Get a Free Demo</a>
+  <section
+    class="relative text-center py-32 bg-cover bg-center fade-in"
+    style="background-image: url('img/hero.png');"
+  >
+    <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/40 to-black/75"></div>
+    <div class="relative max-w-4xl mx-auto px-6 z-10">
+      <lottie-player
+        background="transparent"
+        speed="1"
+        style="width: 280px; height: 280px; margin: 0 auto;"
+        loop autoplay
+        src="https://assets4.lottiefiles.com/packages/lf20_x62chJ.json"
+      ></lottie-player>
+      <h2 class="text-5xl font-extrabold text-white mt-8 leading-tight drop-shadow-lg">
+        Helping HVAC Businesses Get More Leads & Grow Fast
+      </h2>
+      <p class="mt-6 text-lg text-gray-300 max-w-xl mx-auto leading-relaxed">
+        Modern websites, Google optimization, SEO, and paid ads tailored to HVAC companies.
+      </p>
+      <a
+        href="#contact"
+        class="mt-8 inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg"
+      >
+        Get a Free Demo
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Choose Me -->
+  <section id="why" class="py-20 px-6 max-w-5xl mx-auto fade-in">
+    <h3 class="text-4xl font-extrabold text-center text-white mb-12">Why Choose Myron Web Studio?</h3>
+    <div class="grid md:grid-cols-2 gap-12 text-gray-300">
+      <div class="flex space-x-4">
+        <div class="text-blue-500 text-4xl flex-shrink-0">🚀</div>
+        <div>
+          <h4 class="text-2xl font-semibold mb-2 text-white">Proven Growth Strategies</h4>
+          <p>We create websites and campaigns that generate real HVAC leads and boost revenue.</p>
+        </div>
+      </div>
+      <div class="flex space-x-4">
+        <div class="text-blue-500 text-4xl flex-shrink-0">🛠️</div>
+        <div>
+          <h4 class="text-2xl font-semibold mb-2 text-white">HVAC Industry Expertise</h4>
+          <p>Specialized marketing tailored to the unique needs of HVAC businesses.</p>
+        </div>
+      </div>
+      <div class="flex space-x-4">
+        <div class="text-blue-500 text-4xl flex-shrink-0">⚡</div>
+        <div>
+          <h4 class="text-2xl font-semibold mb-2 text-white">Fast & Responsive</h4>
+          <p>Mobile-friendly designs with lightning-fast load times to capture every visitor.</p>
+        </div>
+      </div>
+      <div class="flex space-x-4">
+        <div class="text-blue-500 text-4xl flex-shrink-0">🤝</div>
+        <div>
+          <h4 class="text-2xl font-semibold mb-2 text-white">Dedicated Support</h4>
+          <p>We're here for you with clear communication and ongoing optimization.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-20 px-4 fade-in bg-[url('img/services.png')] bg-cover bg-center bg-no-repeat relative">
-    <div class="absolute inset-0 bg-black opacity-10"></div>
-    <div class="relative max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-12 text-center text-white">Services</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/2303/2303961.png" alt="Website Design" class="w-16 mx-auto mb-4 invert" />
-            <h4 class="text-xl font-semibold text-blue-400 mb-2">Website Design</h4>
-            <p class="text-sm text-gray-400">Mobile-friendly, high-converting sites tailored to HVAC companies.</p>
+  <section
+    id="services"
+    class="py-20 px-6 max-w-7xl mx-auto fade-in bg-[url('img/services.png')] bg-cover bg-center bg-no-repeat relative"
+  >
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="relative z-10">
+      <h3 class="text-3xl font-bold mb-12 text-center text-white">Our Services</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center cursor-default"
+          title="Mobile-friendly, high-converting sites tailored to HVAC companies."
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2303/2303961.png"
+            alt="Website Design"
+            class="w-16 mx-auto mb-4 invert"
+          />
+          <h4 class="text-xl font-semibold text-blue-400 mb-2">Website Design</h4>
+          <p class="text-sm text-gray-400">
+            Mobile-friendly, high-converting sites tailored to HVAC companies.
+          </p>
         </div>
-        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Google Profile" class="w-16 mx-auto mb-4 invert" />
-            <h4 class="text-xl font-semibold text-blue-400 mb-2">Google Business Optimization</h4>
-            <p class="text-sm text-gray-400">Optimize Google profile for maps visibility & positive reviews.</p>
+        <div
+          class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center cursor-default"
+          title="Optimize Google profile for maps visibility & positive reviews."
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+            alt="Google Business Optimization"
+            class="w-16 mx-auto mb-4 invert"
+          />
+          <h4 class="text-xl font-semibold text-blue-400 mb-2">Google Business Optimization</h4>
+          <p class="text-sm text-gray-400">Optimize Google profile for maps visibility &amp; positive reviews.</p>
         </div>
-        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="Local SEO" class="w-16 mx-auto mb-4" />
-            <h4 class="text-xl font-semibold text-blue-400 mb-2">Local SEO</h4>
-            <p class="text-sm text-gray-400">Rank higher in local searches with smart content strategies.</p>
+        <div
+          class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center cursor-default"
+          title="Rank higher in local searches with smart content strategies."
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/681/681494.png"
+            alt="Local SEO"
+            class="w-16 mx-auto mb-4 invert"
+          />
+          <h4 class="text-xl font-semibold text-blue-400 mb-2">Local SEO</h4>
+          <p class="text-sm text-gray-400">Rank higher in local searches with smart content strategies.</p>
         </div>
-        <div class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/1042/1042338.png" alt="Lead Generation" class="w-16 mx-auto mb-4 invert" />
-            <h4 class="text-xl font-semibold text-blue-400 mb-2">Lead Generation Ads</h4>
-            <p class="text-sm text-gray-400">Drive calls and quotes with Facebook & Google advertising.</p>
+        <div
+          class="bg-neutral-800 p-6 rounded-xl shadow hover:shadow-xl transition text-center cursor-default"
+          title="Drive calls and quotes with Facebook & Google advertising."
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1042/1042338.png"
+            alt="Lead Generation"
+            class="w-16 mx-auto mb-4 invert"
+          />
+          <h4 class="text-xl font-semibold text-blue-400 mb-2">Lead Generation Ads</h4>
+          <p class="text-sm text-gray-400">Drive calls and quotes with Facebook &amp; Google advertising.</p>
         </div>
-        </div>
+      </div>
     </div>
   </section>
 
   <!-- Portfolio -->
-  <section id="portfolio" class="py-20 px-4 fade-in bg-[url('img/services.png')] bg-cover bg-center bg-no-repeat relative">
-    <div class="absolute inset-0 bg-black opacity-5"></div>
-    <div class="relative max-w-6xl mx-auto z-10">
-        <div class="max-w-6xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-12 text-white">Portfolio</h3>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-neutral-900 p-4 shadow rounded-lg hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1592231858371-5693c26277ab?auto=format&fit=crop&w=800&q=80" alt="ChillPro HVAC Site" class="rounded mb-4" />
-                    <h4 class="font-semibold text-white">ChillPro HVAC</h4>
-                    <p class="text-sm text-gray-400">Website redesign + Google profile optimization.</p>
-                </div>
-                <div class="bg-neutral-900 p-4 shadow rounded-lg hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1581093458790-0f3e9c25bb4a?auto=format&fit=crop&w=800&q=80" alt="CleanAir Heating" class="rounded mb-4" />
-                    <h4 class="font-semibold text-white">CleanAir Heating</h4>
-                    <p class="text-sm text-gray-400">Landing page design + paid ads campaign.</p>
-                </div>
-            </div>
+  <section
+    id="portfolio"
+    class="py-20 px-6 max-w-7xl mx-auto fade-in bg-[url('img/portfolio-bg.png')] bg-cover bg-center bg-no-repeat relative"
+  >
+    <div class="absolute inset-0 bg-black opacity-10"></div>
+    <div class="relative z-10">
+      <h3 class="text-3xl font-bold text-center mb-12 text-white">Portfolio</h3>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div
+          class="bg-neutral-900 p-6 shadow rounded-lg hover:shadow-lg transition cursor-pointer"
+          title="Website redesign + Google profile optimization."
+        >
+          <img
+            src="https://images.unsplash.com/photo-1592231858371-5693c26277ab?auto=format&fit=crop&w=800&q=80"
+            alt="ChillPro HVAC Site"
+            class="rounded mb-4"
+          />
+          <h4 class="font-semibold text-white text-xl mb-2">ChillPro HVAC</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Website redesign + Google profile optimization.
+          </p>
         </div>
+        <div
+          class="bg-neutral-900 p-6 shadow rounded-lg hover:shadow-lg transition cursor-pointer"
+          title="Landing page design + paid ads campaign."
+        >
+          <img
+            src="https://images.unsplash.com/photo-1581093458790-0f3e9c25bb4a?auto=format&fit=crop&w=800&q=80"
+            alt="CleanAir Heating"
+            class="rounded mb-4"
+          />
+          <h4 class="font-semibold text-white text-xl mb-2">CleanAir Heating</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">Landing page design + paid ads campaign.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 max-w-3xl mx-auto px-4 fade-in">
-    <h3 class="text-3xl font-bold text-center mb-6 text-white">Contact Me</h3>
-    <form id="contactForm" class="space-y-4">
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required
-        class="w-full bg-neutral-800 text-white border border-gray-600 p-3 rounded"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        required
-        class="w-full bg-neutral-800 text-white border border-gray-600 p-3 rounded"
-      />
-      <textarea
-        name="message"
-        rows="5"
-        placeholder="Your Message"
-        required
-        class="w-full bg-neutral-800 text-white border border-gray-600 p-3 rounded"
-      ></textarea>
+  <section
+    id="contact"
+    class="py-20 px-6 max-w-xl mx-auto fade-in rounded-lg bg-neutral-900 shadow-lg"
+  >
+    <h3 class="text-3xl font-bold text-center mb-8 text-white">Ready to Grow Your HVAC Business?</h3>
+    <p class="text-center text-gray-400 mb-10 max-w-md mx-auto leading-relaxed">
+      Send me a message below or book a free demo consultation. Let’s get started on your growth journey!
+    </p>
+    <form id="contactForm" class="space-y-1" novalidate>
+      <div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          aria-describedby="nameError"
+        />
+        <p id="nameError" class="error-text hidden">Please enter your name.</p>
+      </div>
+      <div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          aria-describedby="emailError"
+        />
+        <p id="emailError" class="error-text hidden">Please enter a valid email address.</p>
+      </div>
+      <div>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          aria-describedby="messageError"
+        ></textarea>
+        <p id="messageError" class="error-text hidden">Please enter your message.</p>
+      </div>
       <button
         type="submit"
-        class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+        id="submitBtn"
+        class="w-full bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg disabled:opacity-60"
       >
         Send Message
       </button>
     </form>
-    <p id="formMessage" class="text-center text-green-400 mt-4 hidden">Thank you! Your message has been sent.</p>
+    <p
+      id="formMessage"
+      class="text-center mt-6 hidden text-green-400 font-semibold"
+      role="alert"
+    ></p>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 bg-neutral-950 text-sm text-gray-500">
+  <footer
+    class="text-center py-6 bg-neutral-950 text-sm text-gray-500 select-none"
+  >
     &copy; 2025 Myron Web Studio. All rights reserved.
   </footer>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Form validation helper
+    function validateEmail(email) {
+      // Simple regex email validation
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email.toLowerCase());
+    }
+
+    function showError(inputEl, errorEl) {
+      inputEl.classList.add('input-error');
+      errorEl.classList.remove('hidden');
+    }
+    function clearError(inputEl, errorEl) {
+      inputEl.classList.remove('input-error');
+      errorEl.classList.add('hidden');
+    }
+
+    const form = document.getElementById('contactForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('formMessage').classList.remove('hidden');
-      this.reset();
-    });
+      formMessage.classList.add('hidden');
+      formMessage.textContent = '';
 
-    // Header show/hide on scroll
-    const header = document.querySelector('header');
-    let lastScrollY = window.scrollY;
+      let valid = true;
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        // Scroll down - hide header
-        header.style.transform = 'translateY(-100%)';
+      // Validate name
+      if (nameInput.value.trim() === '') {
+        showError(nameInput, document.getElementById('nameError'));
+        valid = false;
       } else {
-        // Scroll up - show header
-        header.style.transform = 'translateY(0)';
+        clearError(nameInput, document.getElementById('nameError'));
       }
-      lastScrollY = window.scrollY;
+
+      // Validate email
+      if (!validateEmail(emailInput.value.trim())) {
+        showError(emailInput, document.getElementById('emailError'));
+        valid = false;
+      } else {
+        clearError(emailInput, document.getElementById('emailError'));
+      }
+
+      // Validate message
+      if (messageInput.value.trim() === '') {
+        showError(messageInput, document.getElementById('messageError'));
+        valid = false;
+      } else {
+        clearError(messageInput, document.getElementById('messageError'));
+      }
+
+      if (!valid) {
+        return;
+      }
+
+      // Disable submit button
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      // Simulate async submission (replace with real API call)
+      setTimeout(() => {
+        // Success
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        formMessage.textContent = 'Thank you! Your message has been sent.';
+        formMessage.classList.remove('hidden');
+        formMessage.classList.remove('text-red-400');
+        formMessage.classList.add('text-green-400');
+      }, 1500);
     });
   </script>
 </body>
