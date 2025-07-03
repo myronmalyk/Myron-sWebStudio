@@ -8,9 +8,7 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0d0d0d;
@@ -23,35 +21,24 @@
       opacity: 0;
     }
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
     }
     header {
       transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
       backdrop-filter: saturate(180%) blur(10px);
       background-color: rgba(15, 15, 15, 0.8);
-      /* slightly transparent for modern look */
     }
-    /* Scroll effect for header bg */
     header.scrolled {
       background-color: rgba(15, 15, 15, 0.95);
       box-shadow: 0 2px 8px rgb(0 0 0 / 0.6);
     }
-    /* Button hover shadow */
     .btn-primary:hover {
       box-shadow: 0 4px 15px rgb(59 130 246 / 0.7);
     }
-
-    /* Form input error styling */
     .input-error {
-      border-color: #f87171 !important; /* red-400 */
-      background-color: #7f1d1d !important; /* dark red bg */
+      border-color: #f87171 !important;
+      background-color: #7f1d1d !important;
     }
     .error-text {
       color: #f87171;
@@ -202,104 +189,27 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <!--<section
-    id="portfolio"
-    class="py-20 px-6 max-w-7xl mx-auto fade-in bg-[url('img/portfolio-bg.png')] bg-cover bg-center bg-no-repeat relative"
-  >
-    <div class="absolute inset-0 bg-black opacity-10"></div>
-    <div class="relative z-10">
-      <h3 class="text-3xl font-bold text-center mb-12 text-white">Portfolio</h3>
-      <div class="grid md:grid-cols-2 gap-12">
-        <div
-          class="bg-neutral-900 p-6 shadow rounded-lg hover:shadow-lg transition cursor-pointer"
-          title="Website redesign + Google profile optimization."
-        >
-          <img
-            src="https://images.unsplash.com/photo-1592231858371-5693c26277ab?auto=format&fit=crop&w=800&q=80"
-            alt="ChillPro HVAC Site"
-            class="rounded mb-4"
-          />
-          <h4 class="font-semibold text-white text-xl mb-2">ChillPro HVAC</h4>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Website redesign + Google profile optimization.
-          </p>
-        </div>
-        <div
-          class="bg-neutral-900 p-6 shadow rounded-lg hover:shadow-lg transition cursor-pointer"
-          title="Landing page design + paid ads campaign."
-        >
-          <img
-            src="https://images.unsplash.com/photo-1581093458790-0f3e9c25bb4a?auto=format&fit=crop&w=800&q=80"
-            alt="CleanAir Heating"
-            class="rounded mb-4"
-          />
-          <h4 class="font-semibold text-white text-xl mb-2">CleanAir Heating</h4>
-          <p class="text-gray-400 text-sm leading-relaxed">Landing page design + paid ads campaign.</p>
-        </div>
-      </div>
-    </div>
-  </section>-->
-
   <!-- Contact -->
-  <section
-    id="contact"
-    class="py-20 px-6 max-w-xl mx-auto fade-in rounded-lg bg-neutral-900 shadow-lg"
-  >
+  <section id="contact" class="py-20 px-6 max-w-xl mx-auto fade-in rounded-lg bg-neutral-900 shadow-lg">
     <h3 class="text-3xl font-bold text-center mb-8 text-white">Ready to Grow Your HVAC Business?</h3>
     <p class="text-center text-gray-400 mb-10 max-w-md mx-auto leading-relaxed">
-      Send me a message below or book a free demo consultation. Let’s get started on your growth journey!
+        Send me a message below. You'll get a 100% free 7‑point website and marketing audit.
     </p>
-    <form id="contactForm" class="space-y-1" novalidate>
-      <div>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          required
-          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-          aria-describedby="nameError"
-        />
-        <p id="nameError" class="error-text hidden">Please enter your name.</p>
-      </div>
-      <div>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-          aria-describedby="emailError"
-        />
-        <p id="emailError" class="error-text hidden">Please enter a valid email address.</p>
-      </div>
-      <div>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          required
-          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-          aria-describedby="messageError"
-        ></textarea>
-        <p id="messageError" class="error-text hidden">Please enter your message.</p>
-      </div>
-      <button
-        type="submit"
-        id="submitBtn"
-        class="w-full bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg disabled:opacity-60"
-      >
-        Send Message
-      </button>
+    <form action="https://formspree.io/f/mayzpvpe" method="POST" class="space-y-1">
+        <div>
+            <input type="text" name="name" placeholder="Your Name" required class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+        </div>
+        <div>
+            <input type="email" name="email" placeholder="Your Email" required class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
+        </div>
+        <div>
+            <textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg">
+            Send Message
+        </button>
     </form>
-    <p
-      id="formMessage"
-      class="text-center mt-6 hidden text-green-400 font-semibold"
-      role="alert"
-    ></p>
+    <p class="text-sm text-center text-gray-500 mt-4">No spam. No calls. Just value.</p>
   </section>
 
   <!-- Footer -->
