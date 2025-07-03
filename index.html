@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Myron Web Studio - HVAC Marketing</title>
+  <title>Myron's Agency - HVAC Marketing</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -51,10 +51,10 @@
   <!-- Header -->
   <header class="sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-3xl font-extrabold text-blue-400 tracking-tight cursor-pointer select-none">Myron Web Studio</h1>
+      <h1 class="text-3xl font-extrabold text-blue-400 tracking-tight cursor-pointer select-none">Myron's Agency</h1>
       <nav class="space-x-8 text-sm font-semibold flex items-center text-gray-300">
         <a href="#services" class="hover:text-blue-400 transition">Services</a>
-        <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
+        <!--<a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>-->
         <a href="#why" class="hover:text-blue-400 transition">Why Choose Me</a>
         <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
         <a href="#contact" class="ml-6 px-4 py-2 rounded-full bg-blue-600 text-white font-semibold transition btn-primary">Work With Me</a>
@@ -93,7 +93,7 @@
 
   <!-- Why Choose Me -->
   <section id="why" class="py-20 px-6 max-w-5xl mx-auto fade-in">
-    <h3 class="text-4xl font-extrabold text-center text-white mb-12">Why Choose Myron Web Studio?</h3>
+    <h3 class="text-4xl font-extrabold text-center text-white mb-12">Why Choose Myron's Agency?</h3>
     <div class="grid md:grid-cols-2 gap-12 text-gray-300">
       <div class="flex space-x-4">
         <div class="text-blue-500 text-4xl flex-shrink-0">🚀</div>
@@ -195,6 +195,7 @@
     <p class="text-center text-gray-400 mb-10 max-w-md mx-auto leading-relaxed">
         Send me a message below. You'll get a 100% free 7‑point website and marketing audit.
     </p>
+<<<<<<< HEAD
     <form action="https://formspree.io/f/mayzpvpe" method="POST" class="space-y-1">
         <div>
             <input type="text" name="name" placeholder="Your Name" required class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition" />
@@ -208,6 +209,52 @@
         <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg">
             Send Message
         </button>
+=======
+    <form action="https://formspree.io/f/mnnvwoyy" method="POST" class="space-y-1" >
+      <div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          aria-describedby="nameError"
+        />
+        <p id="nameError" class="error-text hidden">Please enter your name.</p>
+      </div>
+      <div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          aria-describedby="emailError"
+        />
+        <p id="emailError" class="error-text hidden">Please enter a valid email address.</p>
+      </div>
+      <div>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+          class="w-full bg-neutral-800 text-white border border-gray-600 p-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          aria-describedby="messageError"
+        ></textarea>
+        <p id="messageError" class="error-text hidden">Please enter your message.</p>
+      </div>
+      <button
+        type="submit"
+        id="submitBtn"
+        class="w-full bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg disabled:opacity-60"
+      >
+        Send Message
+      </button>
+>>>>>>> e6e3d6f6d4de3e142a72b707359fe3f5c4ffaf6b
     </form>
     <p class="text-sm text-center text-gray-500 mt-4">No spam. No calls. Just value.</p>
   </section>
